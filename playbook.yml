@@ -1,0 +1,35 @@
+---
+- hosts: webservers
+  user: root
+  tasks:
+   - name: Install Java 8
+     apt:
+       name: openjdk-8-jre
+       state: present
+   - name: Create Folder
+     file:
+      path: /home/osboxes/tomcat
+      state: Directory
+      mode: 0755
+      owner: osboxes
+      group: osboxes
+   - name: Download Tomcat
+     get_url: url=https://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.22/bin/apache-tomcat-9.0.22.tar.gz dest=/home/osboxes/tomcat
+   - name: Extract  archive
+     unarchive: 
+      src: /home/osboxes/tomcat/apache-tomcat-9.0.22.tar.gz 
+      dest: /home/osboxes/tomcat 
+      remote_src: yes
+   - name: Create Folder to copy
+     file:
+      path: /home/osboxes/tomcat/webapps/coches
+      state: Directory
+      mode: 0755
+      owner: osboxes
+      group: osboxes
+   - name: Copy Artefact
+     copy:
+      src: /root/.jenkins/workspace/Pipelinecoches/dist/webForm
+      dest: /home/osboxes/tomcat/webapps/coches
+   - name: Start Apache tomcat
+     shell: /home/osboxes/tomcat/apache-tomcat-9.0.22/bin/startup.sh
