@@ -56,6 +56,7 @@
  * Zone JS is required by default for Angular itself.
  */
 import 'zone.js/dist/zone';  // Included with Angular CLI.
+/*
 import 'core-js/es6/object';
 import 'core-js/es6/function';
 import 'core-js/es6/parse-int';
@@ -69,7 +70,7 @@ import 'core-js/es6/regexp';
 import 'core-js/es6/map';
 import 'core-js/es6/weak-map';
 import 'core-js/es6/set';
-import 'intl';
+import 'intl';*/
 
 
 /***************************************************************************************************
