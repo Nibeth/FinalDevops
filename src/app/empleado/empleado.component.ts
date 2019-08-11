@@ -30,7 +30,7 @@ export class EmpleadoComponent{
         console.log(this.trabajadores);
     }
 
-    cambiarExterno(valor){
+    cambiarExterno(valor: boolean){
         this.trabajador_externo = valor;
     }
     logColorSeleccionado(){
