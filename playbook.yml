@@ -9,7 +9,7 @@
    - name: Create Folder
      file:
       path: /home/osboxes/tomcat
-      state: Directory
+      state: directory
       mode: 0755
       owner: osboxes
       group: osboxes
@@ -23,7 +23,7 @@
    - name: Create Folder to copy
      file:
       path: /home/osboxes/tomcat/webapps/coches
-      state: Directory
+      state: directory
       mode: 0755
       owner: osboxes
       group: osboxes
