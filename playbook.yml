@@ -14,22 +14,24 @@
       owner: osboxes
       group: osboxes
    - name: Download Tomcat
-     get_url: url=https://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.22/bin/apache-tomcat-9.0.22.tar.gz dest=/home/osboxes/tomcat
-   - name: Extract  archive
+     get_url: 
+     url: https://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.22/bin/apache-tomcat-9.0.22.tar.gz 
+     dest: /home/osboxes/tomcat
+   - name: Extract  tomcat  
      unarchive: 
       src: /home/osboxes/tomcat/apache-tomcat-9.0.22.tar.gz 
       dest: /home/osboxes/tomcat 
       remote_src: yes
    - name: Create Folder to copy
      file:
-      path: /home/osboxes/tomcat/webapps/coches
+      path: /home/osboxes/apache-tomcat-9.0.22/webapps/coches
       state: directory
       mode: 0755
       owner: osboxes
       group: osboxes
    - name: Copy Artefact
      copy:
-      src: /root/.jenkins/workspace/Pipelinecoches/dist/webForm
-      dest: /home/osboxes/tomcat/webapps/coches
+      src: /root/.jenkins/workspace/Pipelinecoches/dist/webForm/
+      dest: /home/osboxes/apache-tomcat-9.0.22/webapps/coches
    - name: Start Apache tomcat
      shell: /home/osboxes/tomcat/apache-tomcat-9.0.22/bin/startup.sh
