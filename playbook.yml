@@ -32,6 +32,10 @@
    - name: Copy Artefact
      copy:
       src: /root/.jenkins/workspace/Pipelinecoches/dist/webForm/
-      dest: /home/osboxes/apache-tomcat-9.0.22/webapps/coches
+      dest: /home/osboxes/apache-tomcat-9.0.22/webapps/
+  - name: Tomcat configuration
+    copy:
+      src: /root/.jenkins/workspace/Pipelinecoches/server.xml
+      dest: /home/osboxes/tomcat/apache-tomcat-9.0.22/conf/server.xml
    - name: Start Apache tomcat
      shell: /home/osboxes/tomcat/apache-tomcat-9.0.22/bin/startup.sh
