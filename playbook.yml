@@ -15,9 +15,9 @@
       group: osboxes
    - name: Download Tomcat
      get_url: 
-     url: https://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.22/bin/apache-tomcat-9.0.22.tar.gz 
-     dest: /home/osboxes/tomcat
-   - name: Extract  tomcat  
+      url: https://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.22/bin/apache-tomcat-9.0.22.tar.gz 
+      dest: /home/osboxes/tomcat
+   - name: Extract tomcat  
      unarchive: 
       src: /home/osboxes/tomcat/apache-tomcat-9.0.22.tar.gz 
       dest: /home/osboxes/tomcat 
