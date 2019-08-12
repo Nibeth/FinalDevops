@@ -1,3 +1,10 @@
+You need an image with angular CLI, so for that:
+Please execute the following command:
+
+	'docker pull trion/ng-cli:8.2.0'
+
+
+
 # WebForm
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
